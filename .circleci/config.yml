@@ -327,12 +327,12 @@ jobs:
           command: |
             cd backend
             npm install
+            npm run build
+            cd ..
 
       - run:
           name: Package Backend
           command: |
-            npm run build
-            cd ..
             tar -C -czvf artifact.tar.gz 
             cp artifact.tar.gz  ~/
 
