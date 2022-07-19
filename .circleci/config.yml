@@ -270,14 +270,14 @@ jobs:
           command: |
             yum update -y && yum install -y sudo
             sudo yum install -y gcc-c++ make
-            # Install Node.js LTS version as our base Node.js version
-            curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
-            sudo yum install -y nodejs
+            curl -sL https://rpm.nodesource.com/setup_16.x | sudo -E bash -
+            sudo yum install nodejs -y
+            yum install tar -y
+            yum install gzip -y
+
             # Use n version manager to use Node.js v13.8.0
             sudo npm install --global n
             sudo n 13.8.0
-            yum install tar -y
-            yum install gzip -y
 
       - attach_workspace:
           at: ~/
@@ -331,9 +331,9 @@ jobs:
       - run:
           name: Package Backend
           command: |
-            cd backend
+            cd ..
             npm run build
-            tar -czvf artifact.tar.gz .
+            tar -C -czvf artifact.tar.gz 
             cp artifact.tar.gz  /home/ubuntu
 
       - run:
