@@ -269,6 +269,7 @@ jobs:
           name: Install dependencies
           command: |
             yum update -y && yum install -y sudo
+            sudo yum install -y gcc-c++ make
             # Install Node.js LTS version as our base Node.js version
             curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
             sudo yum install -y nodejs
@@ -332,7 +333,7 @@ jobs:
           command: |
             cd backend
             npm run build
-            tar -C backend -czvf artifact.tar.gz .
+            tar -czvf artifact.tar.gz .
             cp artifact.tar.gz  /home/ubuntu
 
       - run:
