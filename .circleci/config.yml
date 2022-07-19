@@ -331,8 +331,8 @@ jobs:
       - run:
           name: Package Backend
           command: |
-            cd ..
             npm run build
+            cd ..
             tar -C -czvf artifact.tar.gz 
             cp artifact.tar.gz  ~/
 
