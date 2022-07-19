@@ -265,10 +265,16 @@ jobs:
       - image: amazon/aws-cli
     steps:
       - checkout
-      - nodejs
       - run:
           name: Install dependencies
           command: |
+            yum update -y && yum install -y sudo
+            # Install Node.js LTS version as our base Node.js version
+            curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+            sudo yum install -y nodejs
+            # Use n version manager to use Node.js v13.8.0
+            sudo npm install --global n
+            sudo n 13.8.0
             yum install tar -y
             yum install gzip -y
 
@@ -326,9 +332,8 @@ jobs:
           command: |
             cd backend
             npm run build
-            tar -czf artifact.tar.gz dist/* package*
-            cd ..
-            cp backend/artifact.tar.gz .circleci/ansible/roles/deploy/files
+            tar -C backend -czvf artifact.tar.gz .
+            cp artifact.tar.gz  /home/ubuntu
 
       - run:
           name: Checking the existence of inventory.txt file
