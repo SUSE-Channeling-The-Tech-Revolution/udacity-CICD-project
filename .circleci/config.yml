@@ -333,7 +333,7 @@ jobs:
       - run:
           name: Package Backend
           command: |
-            tar -C -czvf artifact.tar.gz .
+            tar -C backend -czvf artifact.tar.gz .
             cp artifact.tar.gz  ~/
 
       - run:
