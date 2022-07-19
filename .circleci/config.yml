@@ -334,12 +334,7 @@ jobs:
           name: Package Backend
           command: |
             tar -C backend -czvf artifact.tar.gz .
-            cp artifact.tar.gz  .circleci/ansible/roles/deploy/files/
-
-      - persist_to_workspace:
-          root: ~/
-          paths:
-            - project/.circleci/ansible/roles/deploy/files/artifact.tar.gz
+            cp artifact.tar.gz  ~/
 
       - run:
           name: Checking the existence of inventory.txt && artifact.tar.gz file
@@ -348,7 +343,7 @@ jobs:
             echo "Contents  of the inventory.txt file is -------"
             cat inventory.txt
             echo "Contents of files folder is -------"
-            cat .circleci/ansible/roles/deploy/files/
+            cat ~/
 
       - run:
           name: Deploy backend

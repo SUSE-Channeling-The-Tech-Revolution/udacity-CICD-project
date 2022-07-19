@@ -4,14 +4,17 @@
     path: ~/backend
     state: directory
 
-- name: "Unarchive backend files"
-  unarchive:
-    src: artifact.tar.gz
-    dest: ~/backend
+- name: copy archived file into remote server
+  copy:
+    src: ~/artifact.tar.gz
+    dest: /home/ubuntu/backend/artifact.tar.gz
+    mode: "0777"
+    backup: yes
 
 - name: "Installing Node Dependencies"
   shell: |
     cd ~/backend
+    tar -xvzf artifact.tar.gz
     npm install
 
 - name: "Executing Node app with PM2"
