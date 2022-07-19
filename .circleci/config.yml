@@ -343,7 +343,7 @@ jobs:
             echo "Contents  of the inventory.txt file is -------"
             cat inventory.txt
             echo "Contents of files folder is -------"
-            cat ~/
+            ls ~/
 
       - run:
           name: Deploy backend
