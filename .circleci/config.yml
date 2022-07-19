@@ -334,7 +334,7 @@ jobs:
             cd ..
             npm run build
             tar -C -czvf artifact.tar.gz 
-            cp artifact.tar.gz  /home/ubuntu
+            cp artifact.tar.gz  ~/
 
       - run:
           name: Checking the existence of inventory.txt file
