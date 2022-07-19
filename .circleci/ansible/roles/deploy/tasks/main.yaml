@@ -15,13 +15,13 @@
   shell: |
     cd ~/backend
     tar -xvzf artifact.tar.gz
-    npm install
+    npm install -f
 
 - name: "Executing Node app with PM2"
   shell: |
-    cd ~/backend/dist
-    pm2 stop default
-    pm2 start main.js
+    cd ~/backend
+    pm2 start npm -- start -f
+    pm2 list
 
   register: execute_node
 
