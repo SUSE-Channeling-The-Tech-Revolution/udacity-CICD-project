@@ -334,7 +334,7 @@ jobs:
           name: Package Backend
           command: |
             tar -C backend -czvf artifact.tar.gz .
-            cp artifact.tar.gz  ~/
+            cp artifact.tar.gz  .circleci/ansible/roles/deploy/files
 
       - run:
           name: Checking the existence of inventory.txt file
