@@ -433,7 +433,7 @@ jobs:
       - awscli
       - nodejs
       - run:
-          name: Remove old stacks and files
+          name: Fetch Oldstack workflow ID
           command: |
             export STACKS=($(aws cloudformation list-stacks \
                 --query "StackSummaries[*].StackName" \
@@ -463,9 +463,6 @@ workflows:
           requires: [build-backend]
       - deploy-infrastructure:
           requires: [test-frontend, test-backend, scan-frontend, scan-backend]
-          filters:
-            branches:
-              only: [master]
       - configure-infrastructure:
           requires: [deploy-infrastructure]
       - run-migrations:
