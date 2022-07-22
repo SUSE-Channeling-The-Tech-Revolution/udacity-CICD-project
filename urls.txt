@@ -1,2 +1,4 @@
 
 https://github.com/uzukwujp/udacity-CICD-project/blob/circleci-project-setup/URL01.PNG
+
+https://github.com/uzukwujp/udacity-CICD-project/blob/circleci-project-setup/URL02.PNG
