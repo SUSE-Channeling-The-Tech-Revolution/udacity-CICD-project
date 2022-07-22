@@ -258,6 +258,7 @@ jobs:
           command: |
             if grep -q "has been executed successfully." ~/project/backend/migrations_dump.txt
             then
+                 echo "entered"
                  curl https://kvdb.io/KsVUwr5XQEvZ2Eivp5c7/migration_"${CIRCLE_WORKFLOW_ID:0:7}"  -d '1'
 
                  echo '1' > ~/migration.txt
