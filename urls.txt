@@ -1,4 +1,4 @@
 
-https://github.com/uzukwujp/udacity-CICD-project/blob/circleci-project-setup/URL01.PNG
+https://github.com/uzukwujp/udacity-CICD-project/blob/circleci-project-setup/URL01.PNG  or this: https://github.com/uzukwujp/udacity-CICD-project
 
-https://github.com/uzukwujp/udacity-CICD-project/blob/circleci-project-setup/URL02.PNG
+https://github.com/uzukwujp/udacity-CICD-project/blob/circleci-project-setup/URL02.PNG or this:  http://udapeople-4ee6d34.s3-website-us-east-1.amazonaws.com
