@@ -1,2 +1,2 @@
-'/c/Users/HP PROBOOK 640 G2/Documents/udacity-CICD-project/URL01.PNG'
-'/c/Users/HP PROBOOK 640 G2/Documents/udacity-CICD-project/URL02.PNG'
+
+http://udapeople-41d738b.s3-website-us-east-1.amazonaws.com
